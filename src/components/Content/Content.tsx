@@ -18,35 +18,6 @@ const Content: React.FC = () => {
                         <li className="list-group-item card-bottom">
                             Card Bottom
                         </li>
-
-                    </ul>
-                </div>
-                <div className="card col-xl-4">
-                    <ul className="list-group list-group-flush">
-                        <li className="list-group-item card-title">
-                            <h3>Title</h3>
-                        </li>
-                        <li className="list-group-item card-middle">
-                            Card Center
-                        </li>
-                        <li className="list-group-item card-bottom">
-                            Card Bottom
-                        </li>
-
-                    </ul>
-                </div>
-                <div className="card col-xl-4">
-                    <ul className="list-group list-group-flush">
-                        <li className="list-group-item card-title">
-                            <h3>Title</h3>
-                        </li>
-                        <li className="list-group-item card-middle">
-                            Card Center
-                        </li>
-                        <li className="list-group-item card-bottom">
-                            Card Bottom
-                        </li>
-
                     </ul>
                 </div>
             </div>

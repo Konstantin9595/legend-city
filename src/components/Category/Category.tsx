@@ -4,18 +4,18 @@ import './Category.css';
 const Category: React.FC = () => {
 
     const categories = [
-        {id: 0, label: "Все", attr: "all"},
-        {id: 1, label: "Магазины", attr: "stores"},
-        {id: 2, label: "Еда", attr: "food"},
-        {id: 3, label: "Авто", attr: "auto"},
-        {id: 4, label: "Сфера услуг", attr: "services"}
+        {id: 0, label: "Все", category: "all"},
+        {id: 1, label: "Магазины", category: "stores"},
+        {id: 2, label: "Еда", category: "food"},
+        {id: 3, label: "Авто", category: "auto"},
+        {id: 4, label: "Сфера услуг", category: "services"}
     ]
 
-    const elements = categories.map(({id, label, attr}) => {
+    const elements = categories.map(({id, label, category}) => {
         return (
             <div className="form-check" key={id}>
-                <input className="form-check-input" type="checkbox" id={attr} />
-                <label className="form-check-label" htmlFor={attr}>
+                <input className="form-check-input" type="checkbox" id={category} />
+                <label className="form-check-label" htmlFor={category}>
                     { label }
                 </label>
             </div>
