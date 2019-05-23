@@ -8,14 +8,3 @@ export default class Api {
     }
 
 }
-
-
-
-// application state (ACTIONS)
-    // addServicesReducer
-        // ADD_TO_FAVORITES
-    // requestServicesReducer
-        // REQUEST_CATEGORY_SERVICES
-    // sortServicesReducer
-        // SORT_DATA_SERVICES
-        // SORT_FAVORITE_SERVICES
