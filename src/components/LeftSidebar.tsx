@@ -1,5 +1,5 @@
 import React from 'react';
-import '../../styles/LeftSidebar/LeftSidebar.css';
+import '../styles/LeftSidebar/LeftSidebar.css';
 
 const LeftSidebar: React.FC = () => {
     return (

@@ -1,29 +1,28 @@
 import Api from '../../services/Api'
 
-export const GET_CONTENT = "GET_CONTENT"
-export const GET_CONTENT_SUCCESS = "GET_CONTENT_SUCCESS"
-export const GET_CONTENT_FAIL = "GET_CONTENT_FAIL"
+export const GET_NAVIGATION = "GET_NAVIGATION"
+export const GET_NAVIGATION_SUCCESS = "GET_NAVIGATION_SUCCESS"
+export const GET_NAVIGATION_FAIL = "GET_NAVIGATION_FAIL"
 
 const request = new Api()
 
-
-export const getContentAction = (): Function => {
+export const getNavigationAction = (): Function => {
     return (dispatch:Function) => {
         dispatch({
-            type: GET_CONTENT
+            type: GET_NAVIGATION
         })
 
         request
-            .getAllServices()
+            .getNavigation()
             .then(data => {
                 dispatch({
-                    type: GET_CONTENT_SUCCESS,
+                    type: GET_NAVIGATION_SUCCESS,
                     payload: data
                 })
             })
             .catch(err => {
                 dispatch({
-                    type:GET_CONTENT_FAIL,
+                    type:GET_NAVIGATION_FAIL,
                     payload: err
                 })
             })

@@ -1,35 +1,41 @@
-import React from 'react';
-import '../../styles/Category/Category.css';
+import React, { Component } from 'react';
+import '../styles/Category/Category.css';
 
-const Category: React.FC = () => {
+interface IProps {
+    category: {},
+    getCategoryAction: Function
+}
 
-    const categories = [
-        {id: 0, label: "Все", category: "all"},
-        {id: 1, label: "Магазины", category: "stores"},
-        {id: 2, label: "Еда", category: "food"},
-        {id: 3, label: "Авто", category: "auto"},
-        {id: 4, label: "Сфера услуг", category: "services"}
-    ]
+class Category extends Component<IProps> {
 
-    const elements = categories.map(({id, label, category}) => {
+    componentDidMount() {
+        const { getCategoryAction } = this.props
+        getCategoryAction()
+    }
+
+
+    render() {
+        const { category:{category} }:any = this.props
+
+        const elements = category.map(({id, label, category}:any) => {
+            return (
+                <div className="form-check" key={id}>
+                    <input className="form-check-input" type="checkbox" id={category} />
+                    <label className="form-check-label" htmlFor={category}>
+                        { label }
+                    </label>
+                </div>
+            )
+        })
+
         return (
-            <div className="form-check" key={id}>
-                <input className="form-check-input" type="checkbox" id={category} />
-                <label className="form-check-label" htmlFor={category}>
-                    { label }
-                </label>
+            <div className="category">
+                <div className="form-group">
+                    { elements }
+                </div>
             </div>
-        )
-    })
-
-
-    return (
-        <div className="category">
-            <div className="form-group">
-                { elements }
-            </div>
-        </div>
-    );
+        );
+    }
 }
 
 export default Category;

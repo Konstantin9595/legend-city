@@ -1,17 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './containers/App/App';
+import App from './App';
 import * as serviceWorker from './serviceWorker';
-import Api from './services/Api'
-
-const req = new Api()
-
-req.getAllServices()
-    .then((res) => {
-        console.log("result = ", res)
-    })
-    .catch(err => console.log("Err = ", err))
 
 
 ReactDOM.render(<App />, document.getElementById('root'));

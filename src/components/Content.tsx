@@ -1,31 +1,28 @@
 import React, { Component } from 'react';
-import '../../styles/Content/Content.css';
+import Card from './Card'
 
-class Content extends Component {
+interface IProps {
+    getContentAction?: Function,
+    content: {}
+}
+
+class Content extends Component<IProps> {
 
     componentDidMount() {
-        const {fetchCategoryServices}:any = this.props
+        const { getContentAction }:any = this.props
 
-        //fetchCategoryServices()
+        // action for fetch data from remote api
+        getContentAction()
     }
     render() {
+
+
+        const { content } = this.props
+
         return (
             <div className="content">
                 <div className="row">
-                    <div className="card col-xl-4">
-                        <ul className="list-group list-group-flush">
-                            <li className="list-group-item card-title">
-                                <h3>Title</h3>
-                                <i className="fas fa-heart"></i>
-                            </li>
-                            <li className="list-group-item card-middle">
-                                Card Center
-                            </li>
-                            <li className="list-group-item card-bottom">
-                                Card Bottom
-                            </li>
-                        </ul>
-                    </div>
+                    <Card content={content}/>
                 </div>
             </div>
         );

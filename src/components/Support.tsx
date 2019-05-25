@@ -1,5 +1,5 @@
 import React from 'react';
-import '../../styles/Support/Support.css';
+import '../styles/Support/Support.css';
 import SupportNumber from './SupportNumber'
 
 const Support: React.FC = () => {

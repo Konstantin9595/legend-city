@@ -1,29 +1,30 @@
 import Api from '../../services/Api'
 
-export const GET_CONTENT = "GET_CONTENT"
-export const GET_CONTENT_SUCCESS = "GET_CONTENT_SUCCESS"
-export const GET_CONTENT_FAIL = "GET_CONTENT_FAIL"
+export const GET_USER = "GET_USER"
+export const GET_USER_SUCCESS = "GET_USER_SUCCESS"
+export const GET_USER_FAIL = "GET_USER_FAIL"
 
 const request = new Api()
 
+export const getUserAction = (id:number): Function => {
 
-export const getContentAction = (): Function => {
+
     return (dispatch:Function) => {
-        dispatch({
-            type: GET_CONTENT
-        })
 
+        dispatch({
+            type: GET_USER
+        })
         request
-            .getAllServices()
+            .getUser(id)
             .then(data => {
                 dispatch({
-                    type: GET_CONTENT_SUCCESS,
+                    type: GET_USER_SUCCESS,
                     payload: data
                 })
             })
             .catch(err => {
                 dispatch({
-                    type:GET_CONTENT_FAIL,
+                    type:GET_USER_FAIL,
                     payload: err
                 })
             })

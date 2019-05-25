@@ -1,42 +1,43 @@
 import React, { Component } from 'react';
-import '../containers/App/App.css';
-import HeaderBottom from '../../components/Header/HeaderBottom'
-import HeaderTop from '../../components/Header/HeaderTop'
-import LeftSidebar from '../../components/LeftSidebar'
-import Banner from '../../components/Banner'
-import Category from '../../components/Category'
-import Content from '../../components/Content'
-import { connect } from 'react-redux'
-import { fetchAllServices } from '../../actions/fetchAllServices'
-import { fetchCategoryServices } from '../../actions/fetchCategoryServices'
+import './styles/App/App.css';
+import HeaderBottom from './components/HeaderBottom'
+import HeaderTop from './components/HeaderTop'
+import LeftSidebar from './components/LeftSidebar'
+import Banner from './components/Banner'
+import CategoryContainer from './components/CategoryContainer'
+import ContentContainer from './components/ContentContainer'
+import Content from './components/Content'
+import { createStore, applyMiddleware } from "redux";
+import rootReducer from './store/reducers'
+import {Provider} from 'react-redux'
+import logger from "redux-logger";
+import thunk from "redux-thunk";
+import NavigationContainer from "./components/NavigationContainer";
+import UserContainer from './components/UserContainer'
 
-export interface IProps {
-    fetchCategoryServices: Function
-}
-
-class App extends Component<IProps, object> {
-
+const store = createStore(rootReducer, applyMiddleware(thunk, logger))
+class App extends Component {
     render() {
-        // console.log("Hello")
-        // console.log(this.props)
         return (
-            <div className="container">
-                <header className="App-header">
-                    <HeaderTop />
-                    <HeaderBottom />
-                </header>
-                <main>
-                    <LeftSidebar />
-                    <Banner />
-                    <Category />
-                    <Content {...this.props} />
-                </main>
-            </div>
-
+            <Provider store={store}>
+                <div className="container">
+                    <header className="App-header">
+                        <HeaderTop />
+                        <UserContainer />
+                        <HeaderBottom />
+                    </header>
+                    <main>
+                        <NavigationContainer />
+                        <LeftSidebar />
+                        <Banner />
+                        <CategoryContainer />
+                        <ContentContainer />
+                    </main>
+                </div>
+            </Provider>
         );
     }
 }
-
 // const mapStateToProps = (state:object) :object => {
 //     return {
 //         store: state
@@ -44,17 +45,17 @@ class App extends Component<IProps, object> {
 //
 // }
 
-const mapStateToProps = (state: object): object => {
-    return {
-        initialData: fetchAllServices(state.data)
-    }
-}
+// const mapStateToProps = (state: object): object => {
+//     return {
+//         initialData: fetchAllServices(state.data)
+//     }
+// }
+//
+// const mapDispatchToProps = (dispatch: Function):object => {
+//     return {
+//         fetchCategoryServices: () => dispatch(fetchCategoryServices())
+//     }
+// }
 
-const mapDispatchToProps = (dispatch: Function):object => {
-    return {
-        fetchCategoryServices: () => dispatch(fetchCategoryServices())
-    }
-}
 
-
-export default connect(mapStateToProps, mapDispatchToProps)(App);
+export default App;

@@ -1,27 +1,35 @@
-import React from 'react';
-import '../../styles/Navigation/Navigation.css';
+import React, { Component } from 'react';
+import '../styles/Navigation/Navigation.css';
 
-const Navigation: React.FC = () => {
-    const navigation = {
-        list: [
-            {id: 0, label: "Заведения", "link": "#"},
-            {id: 1, label: "Кэшбэк", "link": "#"}
-        ]
+interface IProps {
+    navigation: {},
+    getNavigationAction?: Function
+}
+
+class Navigation extends Component<IProps> {
+
+    componentDidMount() {
+        const { getNavigationAction }:any = this.props
+        getNavigationAction()
     }
 
-    const elements = navigation.list.map(({id, link, label}) => {
-        return (
-            <li key={id}>
-                <a href={ link }>{ label }</a>
-            </li>
-        )
-    })
+    render() {
+        const { navigation:{navigation} }:any = this.props
 
-    return (
-        <ul className="navigation list-group">
-            { elements }
-        </ul>
-    );
+        const elements = navigation.map(({id, link, label}:any) => {
+            return (
+                <li key={id}>
+                    <a href={ link }>{ label }</a>
+                </li>
+            )
+        })
+
+        return (
+            <ul className="navigation list-group">
+                { elements }
+            </ul>
+        )
+    }
 }
 
 export default Navigation;

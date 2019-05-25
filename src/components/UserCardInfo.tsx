@@ -11,7 +11,7 @@ const UserCardInfo: React.FC = () => {
                 Артем Райм
             </div>
             <div className="card-number">
-                <img src="../../../images/side_car.svg" alt="" className="card-icon"/>
+                <img src="../images/side_car.svg" alt="" className="card-icon"/>
             </div>
         </div>
     );

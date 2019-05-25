@@ -6,7 +6,7 @@
 }
 
 .banner-img {
-    background: url(/static/media/bunner.c52194f7.png) center center no-repeat;
+    background: url(../../images/bunner.png) center center no-repeat;
     width: 100%;
     height: 131px;
     background-size: contain;

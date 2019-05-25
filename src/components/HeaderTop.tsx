@@ -1,7 +1,7 @@
 import React from 'react'
-import "./HeaderTop.css"
-import User from '../../User'
-import Support from '../../Support'
+import Support from './Support'
+import User from './User'
+import '../styles/Header/Header.css'
 
 const HeaderTop: React.FC = () => {
 
@@ -11,7 +11,7 @@ const HeaderTop: React.FC = () => {
                 <Support />
             </div>
             <div className="header__top-right">
-                <User />
+                {/*<User />*/}
             </div>
         </div>
     )

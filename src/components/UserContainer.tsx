@@ -1,30 +1,40 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import Navigation from './Navigation'
+import User from './User'
+import { getUserAction } from '../store/actions'
 
-// Компонент NavigationContainer получает данные навигации на сайте и отображает их в компоненте Navigation
+// Компонент UserContainer получает данные навигации на сайте и отображает их в компоненте User
     // Actions:
-        // GET_NAVIGATION
-        // GET_NAVIGATION_SUCCESS
-        // GET_NAVIGATION_FAIL
+        // GET_USER
+        // GET_USER_SUCCESS
+        // GET_USER_FAIL
     // ActionCreators:
-        // getNavigationAction()
+        // getUserAction()
             // - Информирует о действие и производит запрос. После чего отдает результат. Успешно или неуспешно
-    // getNavigationReducers()
-            // - Проверяет успех или неуспех экшена getNavigationAction после чего отдает новое состояние или дефолтное.
+    // getUserReducers()
+            // - Проверяет успех или неуспех экшена getUserAction после чего отдает новое состояние или дефолтное.
 
 
-class NavigationContainer extends Component {
+class UserContainer extends Component {
 
     render() {
+        const { user, getUserAction }:any = this.props
+
         return (
-            <Navigation />
+            <User user={user} getUserAction={getUserAction} />
         )
     }
 }
 
-const mapStateToProps = () => {}
-const mapDispatchToProps = () => {}
+const mapStateToProps = ({user}:any):{} => {
+    return {
+        user
+    }
+}
+const mapDispatchToProps = (dispatch:Function):{} => {
+    return {
+        getUserAction: (id:number) => dispatch(getUserAction(id))
+    }
+}
 
-
-export default connect(mapStateToProps, mapDispatchToProps)(NavigationContainer);
+export default connect(mapStateToProps, mapDispatchToProps)(UserContainer);

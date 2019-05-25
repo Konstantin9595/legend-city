@@ -61,5 +61,62 @@
       "date": "2019-05-18T11:52:12.732Z",
       "important": false
     }
+  ],
+  "category": [
+    {
+      "id": 0,
+      "label": "Все",
+      "category": "all"
+    },
+    {
+      "id": 1,
+      "label": "Магазины",
+      "category": "stores"
+    },
+    {
+      "id": 2,
+      "label": "Еда",
+      "category": "food"
+    },
+    {
+      "id": 3,
+      "label": "Авто",
+      "category": "auto"
+    },
+    {
+      "id": 4,
+      "label": "Сфера услуг",
+      "category": "services"
+    }
+  ],
+  "navigation": [
+    {
+      "id": 0,
+      "label": "Заведения",
+      "link": "#"
+    },
+    {
+      "id": 1,
+      "label": "Кэшбэк",
+      "link": "#"
+    }
+  ],
+  "user": [
+    {
+      "id": 0,
+      "name": "Admin",
+      "logo": "",
+      "currency": {"RUB": true, "USD": false},
+      "balance": 0,
+      "permissions": {"isAdmin":true}
+    },
+    {
+      "id": 1,
+      "name": "Артем",
+      "logo": "",
+      "currency": {"RUB": true, "USD": false},
+      "balance": 1.500,
+      "permissions": {"isAdmin":false}
+    }
   ]
 }
