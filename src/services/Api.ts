@@ -44,9 +44,10 @@ export default class Api {
         // get Entity by id
         const res = await this.getEntity(id)
             .then(data => {
+
                 //change favorites field value in entity
-               // const parse = JSON.parse(data)
                 const changeData = {...data, favorites: !dataFavorites}
+
                 // update database value entity
                 return this.updateEntity(id, changeData)
                     .then(result => result)

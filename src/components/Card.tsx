@@ -20,21 +20,24 @@ class Card extends Component<IProps> {
     changeFavorites = (event:{}):void => {
         const { target }:any = event
 
-        const dataIndex:number = parseInt(target.getAttribute("data-index"));
-        const dataFavorites:boolean = target.getAttribute("data-favorites");
+        const dataIndex:number = parseInt(target.getAttribute("data-index"))
+        const dataFavorites:boolean = JSON.parse(target.getAttribute("data-favorites"))
 
-        this.setState({currentClickFavorite: {dataIndex, dataFavorites }})
+        this.setState({currentClickFavorite: {dataIndex, dataFavorites: dataFavorites }})
     }
 
     componentDidUpdate(prevProps:any, prevState:any) {
-        // const { currentClickFavorite: {dataIndex, dataFavorites} } = this.state
-        // const { updateContentAction } = this.props
-        //
-        // if (dataFavorites !== prevState.currentClickFavorite.dataFavorites) {
-        //     //console.log( "updateContentAction", updateContentAction )
-        //     updateContentAction(dataIndex, dataFavorites)
-        // }
+
+        const { currentClickFavorite: {dataIndex: currentIndex, dataFavorites: currentFavorite} } = this.state
+        const { currentClickFavorite: {dataIndex: prevIndex, dataFavorites: prevFavorite} } = prevState
+        const { updateContentAction } = this.props
+
+        if (currentIndex !== prevIndex || (currentIndex === prevIndex && currentFavorite !== prevFavorite) ) {
+            updateContentAction(currentIndex, currentFavorite)
+        }
+
     }
+
 
     render() {
         const { content }:any = this.props
