@@ -1,0 +1,78 @@
+[
+  {
+    "id": 0,
+    "name": "Рыбный мир",
+    "category": "stores",
+    "avatar": "",
+    "description": "Свежие продукты и морепродукты",
+    "rate": 4.3,
+    "bonuses": [
+      5,
+      10
+    ],
+    "date": "2019-05-23T11:52:12.732Z",
+    "favorites": false
+  },
+  {
+    "id": 1,
+    "name": "АкваРио",
+    "avatar": "",
+    "description": "Аквапарк",
+    "rate": 4.3,
+    "bonuses": [
+      10
+    ],
+    "date": "2019-05-22T11:58:37.134Z",
+    "favorites": false
+  },
+  {
+    "id": 2,
+    "name": "ВинаГрад",
+    "avatar": "",
+    "description": "Сеть магазинов",
+    "rate": 4.3,
+    "bonuses": [
+      3
+    ],
+    "date": "2019-05-21T11:52:12.732Z",
+    "favorites": false
+  },
+  {
+    "id": 3,
+    "name": "Аккумуляторный рай",
+    "avatar": "",
+    "description": "Сеть магазинов",
+    "rate": 4.3,
+    "bonuses": [
+      5
+    ],
+    "date": "2019-05-20T11:52:12.732Z",
+    "favorites": false
+  },
+  {
+    "id": 4,
+    "name": "Сказка",
+    "avatar": "",
+    "description": "Комплект загородного отдыха",
+    "rate": 4.3,
+    "bonuses": [
+      10,
+      25
+    ],
+    "date": "2019-05-19T11:52:12.732Z",
+    "favorites": false
+  },
+  {
+    "id": 5,
+    "name": "Фасоль",
+    "avatar": "",
+    "description": "Супермаркет",
+    "rate": 4.3,
+    "bonuses": [
+      3,
+      10
+    ],
+    "date": "2019-05-18T11:52:12.732Z",
+    "favorites": false
+  }
+]

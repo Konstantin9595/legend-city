@@ -3,7 +3,13 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
+import Api from './services/Api'
 
+// const req = new Api()
+
+// req.updateFavoriteEntity(1, false)
+//     .then(res => console.log("updateFavoriteEntitySUCCECC",res))
+//     .catch(err => console.log("updateFavoriteEntityERROR", err))
 
 ReactDOM.render(<App />, document.getElementById('root'));
 

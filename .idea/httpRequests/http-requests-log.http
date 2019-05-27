@@ -1,3 +1,213 @@
+PUT http://localhost:3001/services/5
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{"id": 5, "name": "Фасоль","avatar": "","description": "Супермаркет","rate": 4.3,"bonuses": [3, 10],"date": "2019-05-18T11:52:12.732Z","favorites": false}
+
+<> 2019-05-27T025340.200.json
+
+###
+
+GET http://localhost:3001/services/5
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+<> 2019-05-27T010050.200.json
+
+###
+
+PUT http://localhost:3001/services/5
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{"id": 5, "name": "Фасоль","avatar": "","description": "Супермаркет","rate": 4.3,"bonuses": [3, 10],"date": "2019-05-18T11:52:12.732Z","favorites": true}
+
+<> 2019-05-27T010031.200.json
+
+###
+
+GET http://localhost:3001/services
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+<> 2019-05-27T125759.200.json
+
+###
+
+GET http://localhost:3001/services?id=0
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+<> 2019-05-27T125751.200.json
+
+###
+
+GET http://localhost:3001/services?id=0
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+<> 2019-05-27T125742.200.json
+
+###
+
+GET http://localhost:3001/services?id=0
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+<> 2019-05-27T125735.200.json
+
+###
+
+GET http://localhost:3001/services/1
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+<> 2019-05-27T125715.200.json
+
+###
+
+GET http://localhost:3001/services/1
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+<> 2019-05-27T125655.200.json
+
+###
+
+GET http://localhost:3001/services/1
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+###
+
+GET http://localhost:3001/services/1
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+<> 2019-05-27T125626.200.json
+
+###
+
+GET http://localhost:3001/services
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+<> 2019-05-27T125618.200.json
+
+###
+
+GET http://localhost:3001/services/1
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+<> 2019-05-27T125600.200.json
+
+###
+
+GET http://localhost:3001/services/1
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+<> 2019-05-27T125550.200.json
+
+###
+
+PUT http://localhost:3001/services/1
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{"favorites": true}
+
+<> 2019-05-27T124903.200.json
+
+###
+
+PUT http://localhost:3001/services/1
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+<> 2019-05-27T124840.200.json
+
+###
+
+GET http://localhost:3001/services/1
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+<> 2019-05-27T124801.200.json
+
+###
+
+PUT http://localhost:3001/services/1
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{"favorites": true}
+
+<> 2019-05-27T124722.200.json
+
+###
+
+PUT http://localhost:3001/favorites/1
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{"favorites": true}
+
+<> 2019-05-27T124500.404.json
+
+###
+
+PUT http://localhost:3001/favorites/1
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+<> 2019-05-27T124332.404.json
+
+###
+
+PUT http://localhost:3001/favorites/1
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{"id": 5, "name": "Фасоль","avatar": "","description": "Супермаркет","rate": 4.3,"bonuses": [3, 10],"date": "2019-05-18T11:52:12.732Z","important": false}
+
+<> 2019-05-27T124309.404.json
+
+###
+
+POST http://localhost:3001/favorites
+Accept: */*
+Cache-Control: no-cache
+Content-Type: application/json
+
+{"id": 5, "name": "Фасоль","avatar": "","description": "Супермаркет","rate": 4.3,"bonuses": [3, 10],"date": "2019-05-18T11:52:12.732Z","important": false}
+
+<> 2019-05-27T122331.201.json
+
+###
+
 GET http://localhost:3001/services
 Accept: */*
 Cache-Control: no-cache

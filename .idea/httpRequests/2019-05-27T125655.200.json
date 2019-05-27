@@ -1,0 +1,12 @@
+{
+  "id": 1,
+  "name": "АкваРио",
+  "avatar": "",
+  "description": "Аквапарк",
+  "rate": 4.3,
+  "bonuses": [
+    10
+  ],
+  "date": "2019-05-22T11:58:37.134Z",
+  "favorites": false
+}

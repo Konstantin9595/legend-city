@@ -7,9 +7,12 @@
       "avatar": "",
       "description": "Свежие продукты и морепродукты",
       "rate": 4.3,
-      "bonuses": [5, 10],
+      "bonuses": [
+        5,
+        10
+      ],
       "date": "2019-05-23T11:52:12.732Z",
-      "important": false
+      "favorites": false
     },
     {
       "id": 1,
@@ -17,9 +20,11 @@
       "avatar": "",
       "description": "Аквапарк",
       "rate": 4.3,
-      "bonuses": [10],
+      "bonuses": [
+        10
+      ],
       "date": "2019-05-22T11:58:37.134Z",
-      "important": false
+      "favorites": true
     },
     {
       "id": 2,
@@ -27,9 +32,11 @@
       "avatar": "",
       "description": "Сеть магазинов",
       "rate": 4.3,
-      "bonuses": [3],
+      "bonuses": [
+        3
+      ],
       "date": "2019-05-21T11:52:12.732Z",
-      "important": false
+      "favorites": false
     },
     {
       "id": 3,
@@ -37,9 +44,11 @@
       "avatar": "",
       "description": "Сеть магазинов",
       "rate": 4.3,
-      "bonuses": [5],
+      "bonuses": [
+        5
+      ],
       "date": "2019-05-20T11:52:12.732Z",
-      "important": false
+      "favorites": false
     },
     {
       "id": 4,
@@ -47,9 +56,12 @@
       "avatar": "",
       "description": "Комплект загородного отдыха",
       "rate": 4.3,
-      "bonuses": [10, 25],
+      "bonuses": [
+        10,
+        25
+      ],
       "date": "2019-05-19T11:52:12.732Z",
-      "important": false
+      "favorites": false
     },
     {
       "id": 5,
@@ -57,9 +69,12 @@
       "avatar": "",
       "description": "Супермаркет",
       "rate": 4.3,
-      "bonuses": [3, 10],
+      "bonuses": [
+        3,
+        10
+      ],
       "date": "2019-05-18T11:52:12.732Z",
-      "important": false
+      "favorites": true
     }
   ],
   "category": [
@@ -108,9 +123,14 @@
       "surname": "Admin",
       "cardNumber": "000 000 000",
       "logo": "",
-      "currency": {"RUB": true, "USD": false},
+      "currency": {
+        "RUB": true,
+        "USD": false
+      },
       "balance": 0,
-      "permissions": {"isAdmin":true}
+      "permissions": {
+        "isAdmin": true
+      }
     },
     {
       "id": 1,
@@ -118,9 +138,14 @@
       "surname": "Райм",
       "cardNumber": "000 000 432",
       "logo": "",
-      "currency": {"RUB": true, "USD": false},
+      "currency": {
+        "RUB": true,
+        "USD": false
+      },
       "balance": 1500,
-      "permissions": {"isAdmin":false}
+      "permissions": {
+        "isAdmin": false
+      }
     }
   ]
 }

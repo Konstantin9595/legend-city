@@ -1,0 +1,13 @@
+{
+  "id": 5,
+  "name": "Фасоль",
+  "avatar": "",
+  "description": "Супермаркет",
+  "rate": 4.3,
+  "bonuses": [
+    3,
+    10
+  ],
+  "date": "2019-05-18T11:52:12.732Z",
+  "important": false
+}
