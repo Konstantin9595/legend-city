@@ -105,6 +105,8 @@
     {
       "id": 0,
       "name": "Admin",
+      "surname": "Admin",
+      "cardNumber": "000 000 000",
       "logo": "",
       "currency": {"RUB": true, "USD": false},
       "balance": 0,
@@ -113,9 +115,11 @@
     {
       "id": 1,
       "name": "Артем",
+      "surname": "Райм",
+      "cardNumber": "000 000 432",
       "logo": "",
       "currency": {"RUB": true, "USD": false},
-      "balance": 1.500,
+      "balance": 1500,
       "permissions": {"isAdmin":false}
     }
   ]

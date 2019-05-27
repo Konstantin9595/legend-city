@@ -1,17 +1,21 @@
 import React from 'react'
 import Support from './Support'
-import User from './User'
-import '../styles/Header/Header.css'
+import UserContainer from './UserContainer'
+import '../styles/Header/Header.scss'
 
 const HeaderTop: React.FC = () => {
 
     return (
-        <div className="header__top-container">
-            <div className="header__top-left">
-                <Support />
-            </div>
-            <div className="header__top-right">
-                {/*<User />*/}
+        <div className="header-top ">
+            <div className="header-line container">
+                <div className="row">
+                    <div className="header__top-left col-xl-8">
+                        <Support/>
+                    </div>
+                    <div className="header__top-right col-xl-4">
+                        <UserContainer/>
+                    </div>
+                </div>
             </div>
         </div>
     )

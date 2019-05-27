@@ -1,5 +1,8 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 import Card from './Card'
+import Banner from './Banner'
+import ContentBar from './ContentBar'
+import '../styles/Content/Content.scss'
 
 interface IProps {
     getContentAction?: Function,
@@ -9,21 +12,22 @@ interface IProps {
 class Content extends Component<IProps> {
 
     componentDidMount() {
-        const { getContentAction }:any = this.props
+        const {getContentAction}:any = this.props
 
         // action for fetch data from remote api
         getContentAction()
     }
+
     render() {
 
 
-        const { content } = this.props
+        const {content} = this.props
 
         return (
-            <div className="content">
-                <div className="row">
-                    <Card content={content}/>
-                </div>
+            <div className="content container-fluid">
+                <Banner />
+                <ContentBar />
+                <Card content={content}/>
             </div>
         );
     }

@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import '../styles/User/User.css';
+import '../styles/User/User.scss';
+import userLogo from '../images/user/ava_30x30x2.png'
 
 interface IProps {
     user: {},
@@ -10,7 +11,11 @@ class User extends Component<IProps> {
 
     state = {
         userSettings: {
-            links: ["Профиль", "Настройки", "Выход"]
+            links: [
+                    {"id":0, "link": "Профиль"},
+                    {"id":1, "link": "Настройки"},
+                    {"id":2, "link": "Выход"}
+                ]
         }
     }
 
@@ -22,25 +27,33 @@ class User extends Component<IProps> {
 
     render() {
 
-        const {user:{user:{id, name, logo, currency, balance, permissions } } }:any = this.props
+        const {user:{user:{id, name, currency, balance } } }:any = this.props
         const { userSettings:{ links } } = this.state
-        console.log("links", links)
+
+        const dropDownMenu = links.map(({id, link}) => <a key={id} className="dropdown-item" href="#">{ link }</a>)
+        const balanceFormat = new Intl.NumberFormat().format(balance)
+
         return (
             <div className="user">
                 <div className="user-balance">
-                    UserBalance
+                    <div className="sum">
+                        <span className="icon-sum"></span>
+                        <span className="sum-number">{ balanceFormat }</span>
+                        <span>₽</span>
+                    </div>
+                    <div className="withdraw">
+                        <button type="button" className="btn btn-outline-success">Вывести</button>
+                    </div>
                 </div>
                 <div className="user-profile">
                     <div className="dropdown">
-                        <img src="../images/user/ava_30x30x2.png" alt="" className="dropdown__user-logo"/>
                         <a className="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            { name }
+                            <img src={userLogo} className="dropdown__user-logo"/>
+                            {name}
                         </a>
 
                         <div className="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                            <a className="dropdown-item" href="#">Action</a>
-                            <a className="dropdown-item" href="#">Another action</a>
-                            <a className="dropdown-item" href="#">Something else here</a>
+                            { dropDownMenu }
                         </div>
                     </div>
                 </div>
@@ -48,6 +61,7 @@ class User extends Component<IProps> {
         )
     }
 }
+
 
 
 export default User;

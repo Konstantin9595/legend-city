@@ -1,10 +1,13 @@
 import React from 'react';
-import '../styles/LeftSidebar/LeftSidebar.css';
+import '../styles/LeftSidebar/LeftSidebar.scss';
+import UserCardInfoContainer from './UserCardInfoContainer'
+import CategoryContainer from './CategoryContainer'
 
 const LeftSidebar: React.FC = () => {
     return (
         <div className="left-sidebar">
-            Left-sidebar
+            <UserCardInfoContainer />
+            <CategoryContainer />
         </div>
     );
 }

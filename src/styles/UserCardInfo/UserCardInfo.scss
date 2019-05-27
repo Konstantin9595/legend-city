@@ -1,0 +1,33 @@
+.user__card-info {
+  background: #eee;
+  border-radius: 3px;
+  padding: 20px;
+  .about-card {
+    font-size: 11px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+    margin-bottom: 10px;
+  }
+
+  .user-name {
+    background: #F2C94C;
+    border-radius: 25px;
+    display: inline-block;
+    padding: 6px 35px;
+    font-size: 18px;
+  }
+
+  .card-number {
+    font-size: 30px;
+    font-weight: 300;
+    margin-top: 10px;
+    display: flex;
+    .card__number-img {
+      margin-right: 6px;
+    }
+    .card__number-code {
+
+    }
+  }
+}
