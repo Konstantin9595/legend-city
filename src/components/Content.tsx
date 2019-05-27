@@ -6,6 +6,7 @@ import '../styles/Content/Content.scss'
 
 interface IProps {
     getContentAction?: Function,
+    updateContentAction: Function
     content: {}
 }
 
@@ -21,13 +22,12 @@ class Content extends Component<IProps> {
     render() {
 
 
-        const {content} = this.props
-
+        const {content, updateContentAction} = this.props
         return (
             <div className="content container-fluid">
                 <Banner />
                 <ContentBar />
-                <Card content={content}/>
+                <Card updateContentAction={updateContentAction} content={content}/>
             </div>
         );
     }

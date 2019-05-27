@@ -21,6 +21,13 @@ import {
     getUserAction
 } from './user/actions'
 
+import {
+    UPDATE_CONTENT,
+    UPDATE_CONTENT_SUCCESS,
+    UPDATE_CONTENT_FAIL,
+    updateContentAction
+} from './card/actions'
+
 export {
     GET_CONTENT,
     GET_CONTENT_SUCCESS,
@@ -34,6 +41,10 @@ export {
     GET_USER,
     GET_USER_SUCCESS,
     GET_USER_FAIL,
+    UPDATE_CONTENT,
+    UPDATE_CONTENT_SUCCESS,
+    UPDATE_CONTENT_FAIL,
+    updateContentAction,
     getUserAction,
     getNavigationAction,
     getCategoryAction,

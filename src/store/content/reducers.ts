@@ -1,5 +1,5 @@
 import { GET_CONTENT_SUCCESS } from './actions'
-
+import { UPDATE_CONTENT_SUCCESS } from '../actions'
 
 export type State = {
     readonly services: [];
@@ -16,6 +16,10 @@ export const getContentReducers = (state:{} = initialState, action:{type:string,
             return {
                 ...state,
                 services: action.payload
+            }
+        case UPDATE_CONTENT_SUCCESS:
+            return {
+                ...state
             }
         default:
             return state

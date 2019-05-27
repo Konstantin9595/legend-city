@@ -1,17 +1,17 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import Content from './Content'
-import { getContentAction } from '../store/actions'
+import { getContentAction, updateContentAction } from '../store/actions'
 
 
 
 class ContentContainer extends Component{
 
     render() {
-        const {getContentAction, content }:any = this.props
+        const {getContentAction, updateContentAction, content }:any = this.props
 
         return (
-            <Content getContentAction={getContentAction} content={content} />
+            <Content  getContentAction={getContentAction} updateContentAction={updateContentAction} content={content} />
         )
     }
 }
@@ -24,7 +24,8 @@ const mapStateToProps = ({content} :any ):{} => {
 
 const mapDispatchToProps = (dispatch: Function):{} => {
     return {
-        getContentAction: () => dispatch(getContentAction())
+        getContentAction: () => dispatch(getContentAction()),
+        updateContentAction: (id:number, dataFavorites:boolean) => dispatch(updateContentAction(id, dataFavorites))
     }
 }
 

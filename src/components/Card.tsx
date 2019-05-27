@@ -3,20 +3,40 @@ import '../styles/Card/Card.scss'
 import productLogo from '../images/shop_avatar_70x70x2.png'
 
 interface IProps {
-    content: {}
+    content: {},
+    updateContentAction: Function
 }
 
 class Card extends Component<IProps> {
 
+    state = {
+        currentClickFavorite: {dataIndex: null, dataFavorites: null}
+    }
+
+    linkOnClick = (e:any) => {
+        e.preventDefault()
+    }
 
     changeFavorites = (event:{}):void => {
         const { target }:any = event
-        const dataIndex = target.getAttribute("data-index");
-        const dataFavorites = target.getAttribute("data-favorites");
+
+        const dataIndex:number = parseInt(target.getAttribute("data-index"));
+        const dataFavorites:boolean = target.getAttribute("data-favorites");
+
+        this.setState({currentClickFavorite: {dataIndex, dataFavorites }})
+    }
+
+    componentDidUpdate(prevProps:any, prevState:any) {
+        // const { currentClickFavorite: {dataIndex, dataFavorites} } = this.state
+        // const { updateContentAction } = this.props
+        //
+        // if (dataFavorites !== prevState.currentClickFavorite.dataFavorites) {
+        //     //console.log( "updateContentAction", updateContentAction )
+        //     updateContentAction(dataIndex, dataFavorites)
+        // }
     }
 
     render() {
-
         const { content }:any = this.props
 
         const elements = content.services.map(( {id, name, description, favorites, avatar, bonuses:[from, to], category, date, rate }:any ) => {
@@ -25,10 +45,10 @@ class Card extends Component<IProps> {
 
             return (
                 <div className="card-list col-xl-4" key={id}>
-                    <a href="#" className="card-item">
+                    <a href="#" className="card-item" onClick={this.linkOnClick}>
                         <div className="card-title">
                             <h3>{ name }</h3>
-                            <button className={likeClass} onClick={this.changeFavorites} data-index={id} data-favorites={favorites} >
+                            <button className={likeClass} data-index={id} data-favorites={favorites} onClick={this.changeFavorites}>
                                 <i className="fas fa-heart" data-index={id} data-favorites={favorites}>
                                 </i>
                             </button>
