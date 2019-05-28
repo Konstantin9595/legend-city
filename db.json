@@ -12,11 +12,12 @@
         10
       ],
       "date": "2019-05-23T11:52:12.732Z",
-      "favorites": false
+      "favorites": true
     },
     {
       "id": 1,
       "name": "АкваРио",
+      "category": "services",
       "avatar": "",
       "description": "Аквапарк",
       "rate": 4.3,
@@ -29,6 +30,7 @@
     {
       "id": 2,
       "name": "ВинаГрад",
+      "category": "stores",
       "avatar": "",
       "description": "Сеть магазинов",
       "rate": 4.3,
@@ -36,11 +38,12 @@
         3
       ],
       "date": "2019-05-21T11:52:12.732Z",
-      "favorites": false
+      "favorites": true
     },
     {
       "id": 3,
       "name": "Аккумуляторный рай",
+      "category": "auto",
       "avatar": "",
       "description": "Сеть магазинов",
       "rate": 4.3,
@@ -48,11 +51,12 @@
         5
       ],
       "date": "2019-05-20T11:52:12.732Z",
-      "favorites": true
+      "favorites": false
     },
     {
       "id": 4,
       "name": "Сказка",
+      "category": "services",
       "avatar": "",
       "description": "Комплект загородного отдыха",
       "rate": 4.3,
@@ -61,11 +65,12 @@
         25
       ],
       "date": "2019-05-19T11:52:12.732Z",
-      "favorites": false
+      "favorites": true
     },
     {
       "id": 5,
       "name": "Фасоль",
+      "category": "food",
       "avatar": "",
       "description": "Супермаркет",
       "rate": 4.3,

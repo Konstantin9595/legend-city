@@ -7,6 +7,7 @@ import '../styles/Content/Content.scss'
 interface IProps {
     getContentAction?: Function,
     updateContentAction: Function,
+    sortAction: Function,
     content: {}
 }
 
@@ -23,20 +24,30 @@ class Content extends Component<IProps> {
         getContentAction()
     }
 
-    handlerProps = (name:any) => {
+    handlerSorting = (name:any) => {
+        // switch (sort.type) {
+        //     case "SORT_OPTIONS":
+        //         this.setState({favoritesState: name})
+        //     case "SORT_CATEGORY":
+        //         this.setState({favoritesState: name})
+        //     default:
+        //         this.setState({favoritesState: null})
+        // }
+
         this.setState({favoritesState: name})
     }
 
 
     render() {
 
+        const {content, updateContentAction, sortAction} = this.props
+        const { favoritesState } = this.state
 
-        const {content, updateContentAction} = this.props
         return (
-            <div className="content container-fluid">
+            <div className="container-fluid">
                 <Banner />
-                <ContentBar handlerProps={this.handlerProps}/>
-                <Card updateContentAction={updateContentAction} content={content} favoritesState={this.state.favoritesState}/>
+                <ContentBar sortAction={sortAction} handlerSorting={this.handlerSorting}/>
+                <Card updateContentAction={updateContentAction} content={content} favoritesState={favoritesState} />
             </div>
         );
     }

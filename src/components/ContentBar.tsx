@@ -1,35 +1,36 @@
-import React, { Component } from 'react';
-import '../styles/ContentBar/ContentBar.scss';
+import React, { Component } from 'react'
+import '../styles/ContentBar/ContentBar.scss'
+import {SORT_CONTENT_ACTION} from "../store/actions"
 
 interface IProps {
-    handlerProps: Function
+    handlerSorting: Function,
+    sortAction: Function
 }
 
 export default class ContentBar extends Component<IProps> {
 
     state = {
-        value: "all"
-    }
-
-    prepareQueryString = ({value}:{value: {}}) => {
-        switch (value) {
-            case "favorites":
-                console.log("prepareQueryString = ", "favorites")
-                return true
-            default:
-                console.log("prepareQueryString = ", "all = ", value)
-                return false
-        }
+        options: ["all"]
     }
 
     handleChange = (event:any) => {
-        this.setState({value: event.target.value})
+        const currentValue = event.target.value
+        this.setState({
+            options: [currentValue]
+        })
     }
 
-    componentDidUpdate(prevProps:any, prevState:any) {
-        if(prevState.value !== this.state.value) {
-            const { handlerProps } = this.props
-            handlerProps(this.prepareQueryString(this.state))
+    componentDidUpdate(prevProps:{}, prevState:{}) {
+        const { options: prevOptions }:any = prevState
+        const { options: currentOptions }:any = this.state
+
+        if(prevOptions[0] !== currentOptions[0]) {
+            const { handlerSorting, sortAction } = this.props
+
+            sortAction({
+                actionType: SORT_CONTENT_ACTION,
+                actionValue: {options: this.state.options}
+            })
         }
     }
 
@@ -47,7 +48,7 @@ export default class ContentBar extends Component<IProps> {
                 </div>
                 <div className="content_bar__sorting">
                     Сортировка:
-                    <select value={this.state.value}  onChange={this.handleChange}>
+                    <select onChange={this.handleChange}>
                         <option value="all">Все</option>
                         <option value="favorites" >Избраные</option>
                     </select>

@@ -30,7 +30,6 @@ class App extends Component {
                     <main>
                         <div className="container">
                             <div className="row-container">
-                                <LeftSidebar />
                                 <ContentContainer />
                             </div>
                         </div>

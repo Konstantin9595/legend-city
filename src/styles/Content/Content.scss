@@ -1,11 +1,6 @@
-.row-container {
+.content {
     display: flex;
-
     .left-sidebar {
-        flex: 1;
-    }
-
-    .content {
-        flex: 2;
+        flex-basis: 40%;
     }
 }

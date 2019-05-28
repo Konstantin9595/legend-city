@@ -1,14 +1,14 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import Category from './Category'
-import { getCategoryAction } from '../store/actions'
+import { getCategoryAction, sortAction } from '../store/actions'
 
 class CategoryContainer extends Component {
 
     render() {
-        const { category, getCategoryAction }:any = this.props
+        const { category, getCategoryAction, sortAction }:any = this.props
         return (
-            <Category category={category} getCategoryAction={getCategoryAction} />
+            <Category category={category} getCategoryAction={getCategoryAction} sortAction={sortAction}/>
         )
     }
 }
@@ -20,7 +20,8 @@ const mapStateToProps = ({category}:any):{} => {
 }
 const mapDispatchToProps = (dispatch: Function):{} => {
     return {
-        getCategoryAction: () => dispatch(getCategoryAction())
+        getCategoryAction: () => dispatch(getCategoryAction()),
+        sortAction: (params:any) => dispatch(sortAction(params))
     }
 }
 

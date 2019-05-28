@@ -1,18 +1,22 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import Content from './Content'
+import LeftSidebar from './LeftSidebar'
 
-import { getContentAction, updateContentAction } from '../store/actions'
+import { getContentAction, updateContentAction, sortAction } from '../store/actions'
 
 
 
 class ContentContainer extends Component{
 
     render() {
-        const {getContentAction, updateContentAction, content }:any = this.props
+        const {getContentAction, updateContentAction, sortAction, content }:any = this.props
 
         return (
-            <Content getContentAction={getContentAction} updateContentAction={updateContentAction} content={content} />
+            <div className="content">
+                <LeftSidebar />
+                <Content getContentAction={getContentAction} updateContentAction={updateContentAction} sortAction={sortAction} content={content} />
+            </div>
         )
     }
 }
@@ -26,7 +30,8 @@ const mapStateToProps = ({content} :any ):{} => {
 const mapDispatchToProps = (dispatch: Function):{} => {
     return {
         getContentAction: () => dispatch(getContentAction()),
-        updateContentAction: (id:number, dataFavorites:boolean) => dispatch(updateContentAction(id, dataFavorites))
+        updateContentAction: (id:number, dataFavorites:boolean) => dispatch(updateContentAction(id, dataFavorites)),
+        sortAction: (params:any) => dispatch(sortAction(params))
     }
 }
 

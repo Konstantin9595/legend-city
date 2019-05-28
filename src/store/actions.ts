@@ -28,6 +28,13 @@ import {
     updateContentAction
 } from './card/actions'
 
+import {
+    SORT_ACTION,
+    SORT_CATEGORY_ACTION,
+    SORT_CONTENT_ACTION,
+    sortAction
+} from './sort/actions'
+
 export {
     GET_CONTENT,
     GET_CONTENT_SUCCESS,
@@ -44,6 +51,10 @@ export {
     UPDATE_CONTENT,
     UPDATE_CONTENT_SUCCESS,
     UPDATE_CONTENT_FAIL,
+    SORT_ACTION,
+    SORT_CATEGORY_ACTION,
+    SORT_CONTENT_ACTION,
+    sortAction,
     updateContentAction,
     getUserAction,
     getNavigationAction,

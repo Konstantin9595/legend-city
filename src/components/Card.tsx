@@ -39,11 +39,22 @@ class Card extends Component<IProps> {
 
     }
 
+    sortingMiddleWare = ({services, sortingData}:{services: [], sortingData:{}}) => {
+        console.log("sortingMiddleWare = ", sortingData)
+
+        // actionValue: ["stores"] || actionValue: true or false
+
+        // return []
+    }
+
     render() {
         const { content, favoritesState }:any = this.props
-        const sortingMiddleWare = favoritesState !== null && favoritesState ? content.services.filter((el:any) => el.favorites === true ) : content.services
+        const sortingMiddleWare = this.sortingMiddleWare(content)
+        //const sortingMiddleWare = favoritesState !== null && favoritesState ? content.services.filter((el:any) => el.favorites === true ) : content.services
+        console.log("DATA BEFORE RENDERER =======", content)
+        // const sortingCategory =
 
-        const elements = sortingMiddleWare.map(( {id, name, description, favorites, avatar, bonuses:[from, to], category, date, rate }:any ) => {
+        const elements = content.services.map(( {id, name, description, favorites, avatar, bonuses:[from, to], category, date, rate }:any ) => {
 
             const percent = from&&to ? `${from}-${to}%`: `${from}%`
             const likeClass = `like${favorites ? ' like-active' : ''}`
@@ -80,6 +91,8 @@ class Card extends Component<IProps> {
                 </div>
             )
         })
+
+
 
         return (
             <div className="card-wrapper container-fluid">
