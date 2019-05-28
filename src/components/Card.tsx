@@ -4,7 +4,8 @@ import productLogo from '../images/shop_avatar_70x70x2.png'
 
 interface IProps {
     content: {},
-    updateContentAction: Function
+    updateContentAction: Function,
+    favoritesState: {} | null
 }
 
 class Card extends Component<IProps> {
@@ -38,11 +39,12 @@ class Card extends Component<IProps> {
 
     }
 
-
     render() {
-        const { content }:any = this.props
+        const { content, favoritesState }:any = this.props
+        const sortingMiddleWare = favoritesState !== null && favoritesState ? content.services.filter((el:any) => el.favorites === true ) : content.services
 
-        const elements = content.services.map(( {id, name, description, favorites, avatar, bonuses:[from, to], category, date, rate }:any ) => {
+        const elements = sortingMiddleWare.map(( {id, name, description, favorites, avatar, bonuses:[from, to], category, date, rate }:any ) => {
+
             const percent = from&&to ? `${from}-${to}%`: `${from}%`
             const likeClass = `like${favorites ? ' like-active' : ''}`
 
@@ -88,24 +90,6 @@ class Card extends Component<IProps> {
         )
     }
 }
-
-// const Card: React.FC<IProps> = ({content}:any) => {
-//
-//     // 1. Добавление в favorites
-//         // - GET Запрос на получение данных по идентификатору на http://localhost:3001/services/{id}
-//         // - PUT Запрос на изменение данных по идентификатору в http://localhost:3001/services/{id}
-//     // 2. Удаление данных из favorites
-//         // - PUT Запрос на изменение данных по идентификатору в http://localhost:3001/favorites/{id}
-//
-//     // Список задач:
-//         // При клике на Like узнаем предидушее состояние если favorites был true то делаем PUT запрос на изменение favorites = false
-//         // Если был false то делаем PUT запрос на изменение favorites = true
-//
-//     // {"id": 5, "name": "Фасоль","avatar": "","description": "Супермаркет","rate": 4.3,"bonuses": [3, 10],"date": "2019-05-18T11:52:12.732Z","important": false}
-//
-//
-//
-// }
 
 
 export default Card

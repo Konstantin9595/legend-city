@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import Content from './Content'
+
 import { getContentAction, updateContentAction } from '../store/actions'
 
 
@@ -11,7 +12,7 @@ class ContentContainer extends Component{
         const {getContentAction, updateContentAction, content }:any = this.props
 
         return (
-            <Content  getContentAction={getContentAction} updateContentAction={updateContentAction} content={content} />
+            <Content getContentAction={getContentAction} updateContentAction={updateContentAction} content={content} />
         )
     }
 }

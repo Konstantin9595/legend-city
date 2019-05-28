@@ -12,7 +12,7 @@
         10
       ],
       "date": "2019-05-23T11:52:12.732Z",
-      "favorites": true
+      "favorites": false
     },
     {
       "id": 1,
@@ -48,7 +48,7 @@
         5
       ],
       "date": "2019-05-20T11:52:12.732Z",
-      "favorites": false
+      "favorites": true
     },
     {
       "id": 4,
@@ -61,7 +61,7 @@
         25
       ],
       "date": "2019-05-19T11:52:12.732Z",
-      "favorites": true
+      "favorites": false
     },
     {
       "id": 5,

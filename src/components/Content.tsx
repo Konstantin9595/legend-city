@@ -6,11 +6,15 @@ import '../styles/Content/Content.scss'
 
 interface IProps {
     getContentAction?: Function,
-    updateContentAction: Function
+    updateContentAction: Function,
     content: {}
 }
 
 class Content extends Component<IProps> {
+
+    state = {
+        favoritesState: null
+    }
 
     componentDidMount() {
         const {getContentAction}:any = this.props
@@ -19,6 +23,11 @@ class Content extends Component<IProps> {
         getContentAction()
     }
 
+    handlerProps = (name:any) => {
+        this.setState({favoritesState: name})
+    }
+
+
     render() {
 
 
@@ -26,8 +35,8 @@ class Content extends Component<IProps> {
         return (
             <div className="content container-fluid">
                 <Banner />
-                <ContentBar />
-                <Card updateContentAction={updateContentAction} content={content}/>
+                <ContentBar handlerProps={this.handlerProps}/>
+                <Card updateContentAction={updateContentAction} content={content} favoritesState={this.state.favoritesState}/>
             </div>
         );
     }

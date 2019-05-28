@@ -7,6 +7,13 @@ export const UPDATE_CONTENT_FAIL = "UPDATE_CONTENT_FAIL"
 
 const request = new Api()
 
+// Причина в добавлении, удалении "избранного"
+// Происходит запрос на изменение данных в бд
+// После чего происходит запрос на получение всех новых дынных из бд
+
+// сортинг при таком случае просто слетает.
+
+// Возможно при рендринге контента нужно сделать  middleware
 
 export const updateContentAction = (id:number, dataFavorites:boolean): Function => {
     return (dispatch:Function) => {

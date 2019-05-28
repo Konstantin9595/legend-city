@@ -1,0 +1,29 @@
+[
+  {
+    "id": 0,
+    "name": "Рыбный мир",
+    "category": "stores",
+    "avatar": "",
+    "description": "Свежие продукты и морепродукты",
+    "rate": 4.3,
+    "bonuses": [
+      5,
+      10
+    ],
+    "date": "2019-05-23T11:52:12.732Z",
+    "favorites": true
+  },
+  {
+    "id": 5,
+    "name": "Фасоль",
+    "avatar": "",
+    "description": "Супермаркет",
+    "rate": 4.3,
+    "bonuses": [
+      3,
+      10
+    ],
+    "date": "2019-05-18T11:52:12.732Z",
+    "favorites": true
+  }
+]

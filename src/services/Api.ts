@@ -1,3 +1,5 @@
+import {async} from "q";
+
 export default class Api {
     private baseUrl = "http://localhost:3001"
 
@@ -37,6 +39,13 @@ export default class Api {
 
     getUser = async (id: number) => {
         const request = await fetch(`${this.baseUrl}/user/${id}`)
+        return request.json()
+    }
+
+    getWhere = async(path:string, where: any) => {
+        const queryString = Object.keys(where).map((key:any) => key + '=' + where[key]).join('&')
+        const request = await fetch(`${this.baseUrl}/${path}?${queryString}`)
+
         return request.json()
     }
 
