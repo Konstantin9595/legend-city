@@ -29,19 +29,21 @@ export default class UserCardInfo extends Component<IProps> {
 
         return (
             <div className="user__card-info">
-                <div className="about-card">
-                    Информация о карте
-                </div>
-                <div className="user-name">
-                    { name } { surname }
-                </div>
-                <div className="card-number">
-                    <div className="card__number-img">
-                        <img src={cardIcon} />
+                <div className="card__info-container">
+                    <div className="about-card">
+                        Информация о карте
                     </div>
+                    <div className="user-name">
+                        { name } { surname }
+                    </div>
+                    <div className="card-number">
+                        <div className="card__number-img">
+                            <img src={cardIcon} />
+                        </div>
 
-                    <div className="card__number-code">
-                        { cardNumber }
+                        <div className="card__number-code">
+                            { cardNumber }
+                        </div>
                     </div>
                 </div>
             </div>

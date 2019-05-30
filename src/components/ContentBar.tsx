@@ -10,13 +10,13 @@ interface IProps {
 export default class ContentBar extends Component<IProps> {
 
     state = {
-        options: ["all"]
+        options: {all: true}
     }
 
     handleChange = (event:any) => {
         const currentValue = event.target.value
         this.setState({
-            options: [currentValue]
+            options: {[currentValue]:true}
         })
     }
 
@@ -24,20 +24,20 @@ export default class ContentBar extends Component<IProps> {
         const { options: prevOptions }:any = prevState
         const { options: currentOptions }:any = this.state
 
-        if(prevOptions[0] !== currentOptions[0]) {
+        if(prevOptions !== currentOptions) {
             const { handlerSorting, sortAction } = this.props
 
             sortAction({
                 actionType: SORT_CONTENT_ACTION,
-                actionValue: {options: this.state.options}
+                actionValue: {options: [this.state.options]}
             })
         }
     }
 
     render() {
         return (
-            <div className="content_bar container-fluid">
-                <div className="content_bar__title">
+            <div className="content_bar container-fluid row">
+                <div className="content_bar__title col-12 col-md-6">
                     <h2>Заведения</h2>
                     <nav aria-label="breadcrumb">
                         <ol className="breadcrumb">
@@ -46,7 +46,7 @@ export default class ContentBar extends Component<IProps> {
                         </ol>
                     </nav>
                 </div>
-                <div className="content_bar__sorting">
+                <div className="content_bar__sorting col-12 col-md-6">
                     Сортировка:
                     <select onChange={this.handleChange}>
                         <option value="all">Все</option>

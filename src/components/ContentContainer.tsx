@@ -13,7 +13,7 @@ class ContentContainer extends Component{
         const {getContentAction, updateContentAction, sortAction, content }:any = this.props
 
         return (
-            <div className="content">
+            <div className="content row">
                 <LeftSidebar />
                 <Content getContentAction={getContentAction} updateContentAction={updateContentAction} sortAction={sortAction} content={content} />
             </div>

@@ -24,15 +24,8 @@ class Content extends Component<IProps> {
         getContentAction()
     }
 
-    handlerSorting = (name:any) => {
-        // switch (sort.type) {
-        //     case "SORT_OPTIONS":
-        //         this.setState({favoritesState: name})
-        //     case "SORT_CATEGORY":
-        //         this.setState({favoritesState: name})
-        //     default:
-        //         this.setState({favoritesState: null})
-        // }
+    handlerSorting = (name: any) => {
+
 
         this.setState({favoritesState: name})
     }
@@ -41,13 +34,15 @@ class Content extends Component<IProps> {
     render() {
 
         const {content, updateContentAction, sortAction} = this.props
-        const { favoritesState } = this.state
+        const {favoritesState} = this.state
 
         return (
-            <div className="container-fluid">
-                <Banner />
-                <ContentBar sortAction={sortAction} handlerSorting={this.handlerSorting}/>
-                <Card updateContentAction={updateContentAction} content={content} favoritesState={favoritesState} />
+            <div className="container-fluid col-md-8">
+                <div className="row">
+                    <Banner/>
+                    <ContentBar sortAction={sortAction} handlerSorting={this.handlerSorting}/>
+                    <Card updateContentAction={updateContentAction} content={content}/>
+                </div>
             </div>
         );
     }

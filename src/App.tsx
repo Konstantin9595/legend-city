@@ -24,16 +24,15 @@ class App extends Component {
                 <div className="app">
                     <header className="App-header">
                         <HeaderTop/>
-                        {/*<UserContainer />*/}
                         <HeaderBottom/>
                     </header>
-                    <main>
-                        <div className="container">
+                    <div className="wrapper">
+                        <main className="container">
                             <div className="row-container">
-                                <ContentContainer />
+                                <ContentContainer/>
                             </div>
-                        </div>
-                    </main>
+                        </main>
+                    </div>
                 </div>
             </Provider>
         );

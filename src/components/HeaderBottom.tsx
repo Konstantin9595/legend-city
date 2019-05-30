@@ -9,10 +9,10 @@ const HeaderBottom: React.FC = () => {
         <div className="header__bottom-container">
             <div className="container">
                 <div className="row">
-                    <div className="header__bottom-left col-xl-9">
+                    <div className="header__bottom-left col-12 col-md-9">
                         <Logo />
                     </div>
-                    <div className="header__bottom-right col-xl-3">
+                    <div className="header__bottom-right col-12 col-md-3">
                         <NavigationContainer />
                     </div>
                 </div>

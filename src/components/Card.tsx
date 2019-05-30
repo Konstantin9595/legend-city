@@ -1,11 +1,11 @@
 import React, { Component } from "react";
 import '../styles/Card/Card.scss'
 import productLogo from '../images/shop_avatar_70x70x2.png'
+import _ from 'lodash'
 
 interface IProps {
     content: {},
     updateContentAction: Function,
-    favoritesState: {} | null
 }
 
 class Card extends Component<IProps> {
@@ -39,22 +39,37 @@ class Card extends Component<IProps> {
 
     }
 
-    sortingMiddleWare = ({services, sortingData}:{services: [], sortingData:{}}) => {
-        console.log("sortingMiddleWare = ", sortingData)
+    sortingMiddleWare = (data:any) => {
+        if(!_.isEmpty(data.sortingData)) {
+            const {services, sortingData} = data
+            const { actionValue:{options} } = sortingData
 
-        // actionValue: ["stores"] || actionValue: true or false
+            const [filter] = options
+            const keys = Object.keys(filter)
 
-        // return []
+            const result = keys.map(elem => {
+                return services.filter((el:any) => {
+                    switch (elem) {
+                        case "favorites":
+                            return el[elem] === true
+                        default:
+                            return data
+                    }
+                })
+            })
+
+            return {services: _.flatten(result)}
+        }
+
+        return data
+
     }
 
     render() {
-        const { content, favoritesState }:any = this.props
+        const { content }:any = this.props
         const sortingMiddleWare = this.sortingMiddleWare(content)
-        //const sortingMiddleWare = favoritesState !== null && favoritesState ? content.services.filter((el:any) => el.favorites === true ) : content.services
-        console.log("DATA BEFORE RENDERER =======", content)
-        // const sortingCategory =
 
-        const elements = content.services.map(( {id, name, description, favorites, avatar, bonuses:[from, to], category, date, rate }:any ) => {
+        const elements = sortingMiddleWare.services.map(( {id, name, description, favorites, avatar, bonuses:[from, to], category, date, rate }:any ) => {
 
             const percent = from&&to ? `${from}-${to}%`: `${from}%`
             const likeClass = `like${favorites ? ' like-active' : ''}`
@@ -85,13 +100,13 @@ class Card extends Component<IProps> {
                             </div>
                         </div>
                         <div className="card-bottom">
-                            { percent }
+                            <h3> { percent } </h3>
+                            <span>Бонусов</span>
                         </div>
                     </a>
                 </div>
             )
         })
-
 
 
         return (

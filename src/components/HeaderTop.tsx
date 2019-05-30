@@ -6,13 +6,13 @@ import '../styles/Header/Header.scss'
 const HeaderTop: React.FC = () => {
 
     return (
-        <div className="header-top ">
+        <div className="header-top">
             <div className="header-line container">
                 <div className="row">
-                    <div className="header__top-left col-xl-8">
+                    <div className="header__top-left col-md-8">
                         <Support/>
                     </div>
-                    <div className="header__top-right col-xl-4">
+                    <div className="header__top-right col-md-4">
                         <UserContainer/>
                     </div>
                 </div>

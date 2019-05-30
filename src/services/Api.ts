@@ -44,6 +44,7 @@ export default class Api {
 
     getWhere = async(path:string, where: any) => {
         const queryString = Object.keys(where).map((key:any) => key + '=' + where[key]).join('&')
+
         const request = await fetch(`${this.baseUrl}/${path}?${queryString}`)
 
         return request.json()

@@ -3,10 +3,12 @@ import { UPDATE_CONTENT_SUCCESS, SORT_CONTENT_ACTION, SORT_ACTION, SORT_CATEGORY
 
 export type State = {
     readonly services: [];
+    readonly sortingData: {}
 };
 
 export const initialState: State = {
-    services: []
+    services: [],
+    sortingData: {}
 }
 
 

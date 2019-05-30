@@ -5,7 +5,7 @@ import CategoryContainer from './CategoryContainer'
 
 const LeftSidebar: React.FC = () => {
     return (
-        <div className="left-sidebar">
+        <div className="left-sidebar col col-md-4">
             <UserCardInfoContainer />
             <CategoryContainer />
         </div>

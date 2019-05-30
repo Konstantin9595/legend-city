@@ -1,0 +1,57 @@
+body, html {
+  width: 100%;
+  height: 100%;
+}
+body {
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+  box-sizing: border-box;
+}
+
+.wrapper {
+  overflow: hidden;
+  min-height: 100%;
+  //min-width: 1140px;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+@media screen and (max-width: 767px) {
+  .App-header {
+
+    .header__bottom-container {
+      .header__bottom-left {
+        .logo {
+          text-align: center;
+        }
+      }
+
+      .header__bottom-right {
+        ul {
+          justify-content: center;
+          li {
+            a {
+
+            }
+          }
+        }
+      }
+
+
+    }
+
+  }
+  .content {
+    .left-sidebar {
+      .user__card-info {
+        text-align: center;
+        .card__info-container {
+          display: inline-block;
+        }
+      }
+    }
+  }
+}
