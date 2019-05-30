@@ -1,20 +1,9 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.scss';
-import App from './App';
-import * as serviceWorker from './serviceWorker';
-import Api from './services/Api'
+import React from 'react'
+import ReactDOM from 'react-dom'
+import './index.scss'
+import App from './App'
+import * as serviceWorker from './serviceWorker'
 
-// const req = new Api()
-
-// req
-//     .getWhere("services", {"favorites": true})
-//     .then(res => console.log("getWhereResult = ", res))
-//     .catch(err => console.log("err = ", err))
-
-// req.updateFavoriteEntity(1, false)
-//     .then(res => console.log("updateFavoriteEntitySUCCECC",res))
-//     .catch(err => console.log("updateFavoriteEntityERROR", err))
 
 ReactDOM.render(<App />, document.getElementById('root'));
 

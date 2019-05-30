@@ -130,6 +130,24 @@ checkBrowsers(paths.appPath, isInteractive)
       openBrowser(urls.localUrlForBrowser);
     });
 
+
+
+
+    //jsonServer
+//       const jsonServer = require("json-server");
+//
+//       const server = jsonServer.create();
+//       const router = jsonServer.router(paths.jsonServe);
+//       const middlewares = jsonServer.defaults();
+// //
+//       server.use(middlewares);
+//       server.use(router);
+//       server.listen(3001, () => {
+//           console.log("JSON Server is running");
+//       });
+
+
+
     ['SIGINT', 'SIGTERM'].forEach(function(sig) {
       process.on(sig, function() {
         devServer.close();
