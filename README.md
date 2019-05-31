@@ -1,7 +1,7 @@
 # Tестовое задание
 *React+Redux+TypeScript*
 
-## How does it look:
+### Gif:
 ![](legend.gif)
 
 > Посмотреть демо: <https://codesandbox.io/s/b3zy4>
