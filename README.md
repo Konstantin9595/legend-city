@@ -4,7 +4,7 @@
 ### Gif:
 ![](legend.gif)
 
-> Посмотреть демо: <https://codesandbox.io/s/b3zy4>
+> Посмотреть демо: <https://kh6si.sse.codesandbox.io/>
 
 ### Использование
 - Приложение взаимодействует с локальным fake REST API `json-server`
