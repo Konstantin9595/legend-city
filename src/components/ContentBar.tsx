@@ -25,7 +25,7 @@ export default class ContentBar extends Component<IProps> {
         const { options: currentOptions }:any = this.state
 
         if(prevOptions !== currentOptions) {
-            const { handlerSorting, sortAction } = this.props
+            const { /*handlerSorting,*/ sortAction } = this.props
 
             sortAction({
                 actionType: SORT_CONTENT_ACTION,

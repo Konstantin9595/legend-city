@@ -27,7 +27,7 @@ class User extends Component<IProps> {
 
     render() {
 
-        const {user:{user:{id, name, currency, balance } } }:any = this.props
+        const {user:{user:{/*id,*/ name, /*currency,*/ balance } } }:any = this.props
         const { userSettings:{ links } } = this.state
 
         const dropDownMenu = links.map(({id, link}) => <a key={id} className="dropdown-item" href="#">{ link }</a>)
@@ -48,7 +48,7 @@ class User extends Component<IProps> {
                 <div className="user-profile">
                     <div className="dropdown">
                         <a className="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <img src={userLogo} className="dropdown__user-logo"/>
+                            <img  alt="user logo" src={userLogo} className="dropdown__user-logo"/>
                             {name}
                         </a>
 

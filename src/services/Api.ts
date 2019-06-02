@@ -1,5 +1,3 @@
-import {async} from "q";
-
 export default class Api {
     private baseUrl = "http://localhost:3001"
 

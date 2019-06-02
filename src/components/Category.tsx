@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import '../styles/Category/Category.scss';
-import {SORT_CATEGORY_ACTION} from "../store/sort/actions";
+//import {SORT_CATEGORY_ACTION} from "../store/sort/actions";
 
 interface IProps {
     category: {},

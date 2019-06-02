@@ -5,7 +5,9 @@ import logo from '../images/logo.svg'
 const Logo: React.FC = () => {
     return (
         <div className="logo">
-            <img src={logo} alt="Логотип"/>
+            <a href="#">
+                <img src={logo} alt="Логотип"/>
+            </a>
         </div>
     );
 }

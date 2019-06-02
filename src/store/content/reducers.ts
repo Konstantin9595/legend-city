@@ -1,5 +1,5 @@
 import { GET_CONTENT_SUCCESS } from './actions'
-import { UPDATE_CONTENT_SUCCESS, SORT_CONTENT_ACTION, SORT_ACTION, SORT_CATEGORY_ACTION } from '../actions'
+import { UPDATE_CONTENT_SUCCESS, SORT_ACTION } from '../actions'
 
 export type State = {
     readonly services: [];

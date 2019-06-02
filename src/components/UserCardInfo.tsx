@@ -38,7 +38,7 @@ export default class UserCardInfo extends Component<IProps> {
                     </div>
                     <div className="card-number">
                         <div className="card__number-img">
-                            <img src={cardIcon} />
+                            <img alt="card" src={cardIcon} />
                         </div>
 
                         <div className="card__number-code">

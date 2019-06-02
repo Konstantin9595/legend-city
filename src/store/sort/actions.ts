@@ -1,5 +1,3 @@
-import Api from '../../services/Api'
-
 export const SORT_DEFAULT = "SORT_DEFAULT"
 export const SORT_ACTION = "SORT_ACTION"
 export const SORT_CATEGORY_ACTION = "SORT_CATEGORY_ACTION"

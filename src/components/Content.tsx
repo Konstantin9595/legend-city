@@ -34,7 +34,7 @@ class Content extends Component<IProps> {
     render() {
 
         const {content, updateContentAction, sortAction} = this.props
-        const {favoritesState} = this.state
+        //const {favoritesState} = this.state
 
         return (
             <div className="container-fluid col-md-8">
