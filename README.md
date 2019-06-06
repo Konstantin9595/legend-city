@@ -1,4 +1,3 @@
-# Tестовое задание
 *React+Redux+TypeScript*
 
 ### Gif:
